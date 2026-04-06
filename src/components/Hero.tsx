@@ -29,17 +29,17 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-          Suwannee Marina
+          Suwannee Marina<br className="sm:hidden" /> &amp; Restaurant
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-4 animate-fade-in-up animate-delay-200">
-          Your Gateway to the Gulf
+          Waterfront Dining &amp; Your Gateway to the Gulf
         </p>
 
         <p className="text-base sm:text-lg text-white/60 mb-10 max-w-2xl mx-auto animate-fade-in-up animate-delay-300">
-          Located on Florida&apos;s pristine Nature Coast at the mouth of the
-          historic Suwannee River. Full-service marina with boat slips, fuel,
-          bait &amp; tackle, and more.
+          Casual waterfront restaurant and full-service marina on Florida&apos;s
+          Nature Coast. Fresh seafood, Southern comfort food, live bait, fuel,
+          and everything you need for a great day on the Suwannee River.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animate-delay-400">
@@ -47,7 +47,7 @@ export default function Hero() {
             href="/services"
             className="inline-flex items-center justify-center px-8 py-3.5 bg-crimson text-white font-semibold rounded-full transition-all duration-300 hover:bg-crimson-dark hover:scale-105 hover:shadow-lg hover:shadow-crimson/25"
           >
-            Our Services
+            See Menu &amp; Services
           </Link>
           <Link
             href="/tides"

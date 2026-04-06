@@ -37,6 +37,7 @@ export default function TideChart() {
   const [curveData, setCurveData] = useState<TidePrediction[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const today = new Date();
@@ -64,6 +65,12 @@ export default function TideChart() {
       });
   }, []);
 
+  // Update current time every 60 seconds for live dot
+  useEffect(() => {
+    const interval = setInterval(() => setCurrentTime(new Date()), 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
@@ -80,14 +87,6 @@ export default function TideChart() {
     );
   }
 
-  // Group hi/lo by day
-  const dayMap = new Map<string, TidePrediction[]>();
-  hiLoData.forEach((p) => {
-    const day = p.t.split(" ")[0];
-    if (!dayMap.has(day)) dayMap.set(day, []);
-    dayMap.get(day)!.push(p);
-  });
-
   // Build SVG curve for today
   const svgWidth = 800;
   const svgHeight = 200;
@@ -95,6 +94,7 @@ export default function TideChart() {
 
   let curvePath = "";
   let areaPath = "";
+  let currentDot: { x: number; y: number; height: string } | null = null;
 
   if (curveData.length > 0) {
     const values = curveData.map((p) => parseFloat(p.v));
@@ -110,6 +110,22 @@ export default function TideChart() {
 
     curvePath = points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
     areaPath = curvePath + ` L ${points[points.length - 1].x} ${svgHeight - padding} L ${points[0].x} ${svgHeight - padding} Z`;
+
+    // Calculate current tide dot position
+    const fractionalHour = currentTime.getHours() + currentTime.getMinutes() / 60;
+    const dataIndex = (fractionalHour / 24) * (curveData.length - 1);
+    const lowerIdx = Math.max(0, Math.floor(dataIndex));
+    const upperIdx = Math.min(lowerIdx + 1, curveData.length - 1);
+    const frac = dataIndex - lowerIdx;
+
+    const currentX = points[lowerIdx].x + frac * (points[upperIdx].x - points[lowerIdx].x);
+    const currentY = points[lowerIdx].y + frac * (points[upperIdx].y - points[lowerIdx].y);
+
+    const lowerVal = parseFloat(curveData[lowerIdx].v);
+    const upperVal = parseFloat(curveData[upperIdx].v);
+    const currentHeight = (lowerVal + frac * (upperVal - lowerVal)).toFixed(2);
+
+    currentDot = { x: currentX, y: currentY, height: currentHeight };
   }
 
   return (
@@ -139,6 +155,52 @@ export default function TideChart() {
 
             {/* Tide line */}
             {curvePath && <path d={curvePath} className="tide-line" />}
+
+            {/* Current tide indicator */}
+            {currentDot && (
+              <g>
+                {/* Vertical reference line */}
+                <line
+                  x1={currentDot.x}
+                  y1={currentDot.y}
+                  x2={currentDot.x}
+                  y2={svgHeight - padding}
+                  stroke="var(--color-crimson)"
+                  strokeWidth="1"
+                  strokeDasharray="3"
+                  opacity="0.4"
+                />
+                {/* Pulsing outer ring */}
+                <circle cx={currentDot.x} cy={currentDot.y} r="8" fill="var(--color-crimson)" opacity="0.2">
+                  <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2s" repeatCount="indefinite" />
+                </circle>
+                {/* Solid dot */}
+                <circle cx={currentDot.x} cy={currentDot.y} r="5" fill="var(--color-crimson)" stroke="white" strokeWidth="2" />
+                {/* Height label */}
+                <text
+                  x={currentDot.x}
+                  y={currentDot.y - 14}
+                  textAnchor={currentDot.x > svgWidth - padding - 40 ? "end" : currentDot.x < padding + 40 ? "start" : "middle"}
+                  fontSize="11"
+                  fontWeight="bold"
+                  fill="var(--color-crimson)"
+                >
+                  {currentDot.height} ft
+                </text>
+                {/* "Now" label */}
+                <text
+                  x={currentDot.x}
+                  y={svgHeight - padding + 16}
+                  textAnchor="middle"
+                  fontSize="10"
+                  fontWeight="bold"
+                  fill="var(--color-crimson)"
+                >
+                  Now
+                </text>
+              </g>
+            )}
 
             {/* Time labels */}
             {[0, 6, 12, 18, 24].map((hour) => {
@@ -187,7 +249,7 @@ export default function TideChart() {
                           : "bg-crimson/10 text-crimson"
                       }`}
                     >
-                      {p.type === "H" ? "↑ High" : "↓ Low"}
+                      {p.type === "H" ? "High" : "Low"}
                     </span>
                   </td>
                 </tr>

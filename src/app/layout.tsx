@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Suwannee Marina | Your Gateway to the Gulf",
+  title: "Suwannee Marina & Restaurant | Waterfront Dining & Full-Service Marina",
   description:
-    "Suwannee Marina on Florida's Nature Coast. Boat slips, fuel, bait & tackle, fishing charters, and live Suwannee River tide data.",
+    "Suwannee Marina & Restaurant on Florida's Nature Coast. Casual waterfront dining with fresh seafood and Southern comfort food, plus boat slips, fuel, bait & tackle, and live Suwannee River tide data.",
 };
 
 export default function RootLayout({

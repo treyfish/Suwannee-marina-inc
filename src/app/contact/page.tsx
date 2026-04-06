@@ -49,7 +49,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-navy">Address</h3>
                     <p className="text-dark/60 text-sm">
-                      P.O. Box 397<br />
+                      94 SE 903rd Ave<br />
                       Suwannee, FL 32692
                     </p>
                   </div>
@@ -78,8 +78,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-navy">Hours</h3>
                     <p className="text-dark/60 text-sm">
-                      Open 7 Days a Week<br />
-                      Sunrise to Sunset
+                      Open 6 Days a Week<br />
+                      Closes at 2:00 PM
                     </p>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Suwannee Marina location"
+                  title="Suwannee Marina &amp; Restaurant location"
                 />
               </div>
             </div>

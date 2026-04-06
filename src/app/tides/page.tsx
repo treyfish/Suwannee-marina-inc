@@ -2,7 +2,7 @@ import TideChart from "@/components/TideChart";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata = {
-  title: "Tides | Suwannee Marina",
+  title: "Tides | Suwannee Marina & Restaurant",
   description: "Live tide predictions for the Suwannee River Entrance from NOAA. Plan your trip with real-time tide data.",
 };
 

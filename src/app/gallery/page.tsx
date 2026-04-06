@@ -1,11 +1,12 @@
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata = {
-  title: "Gallery | Suwannee Marina",
-  description: "Photos from Suwannee Marina — fishing, sunsets, community events, and life on the Nature Coast.",
+  title: "Gallery | Suwannee Marina & Restaurant",
+  description: "Photos from Suwannee Marina & Restaurant — fishing, sunsets, waterfront dining, and life on the Nature Coast.",
 };
 
 const categories = [
+  { name: "The Restaurant", gradient: "from-sunset to-crimson", count: 4 },
   { name: "Fishing", gradient: "from-water to-navy", count: 6 },
   { name: "Sunsets", gradient: "from-orange-400 to-crimson", count: 6 },
   { name: "Events", gradient: "from-crimson to-navy", count: 6 },
@@ -13,6 +14,11 @@ const categories = [
 ];
 
 const placeholderIcons: Record<string, React.ReactNode> = {
+  "The Restaurant": (
+    <svg className="w-12 h-12 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V7m0 1v8m0 0v1" />
+    </svg>
+  ),
   Fishing: (
     <svg className="w-12 h-12 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 15c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3" />
@@ -93,7 +99,7 @@ export default function GalleryPage() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <p className="text-dark/40 text-sm">
-              Demo gallery — placeholder images shown. Follow us on{" "}
+              Demo gallery — placeholder images shown. Follow Suwannee Marina &amp; Restaurant on{" "}
               <a href="#" className="text-water hover:text-navy transition-colors font-medium">
                 Facebook
               </a>{" "}

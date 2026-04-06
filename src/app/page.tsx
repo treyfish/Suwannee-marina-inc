@@ -12,12 +12,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">
-              Welcome to Suwannee Marina
+              Welcome to Suwannee Marina &amp; Restaurant
             </h2>
             <p className="text-dark/60 max-w-2xl mx-auto text-lg">
               Nestled at the mouth of the Suwannee River on Florida&apos;s Nature
-              Coast, we&apos;ve been serving boaters, anglers, and nature lovers
-              for generations.
+              Coast, we serve up fresh seafood and Southern favorites every
+              morning and afternoon — and we&apos;ve been outfitting boaters and
+              anglers for generations.
             </p>
           </ScrollReveal>
 
@@ -25,11 +26,11 @@ export default function Home() {
             {[
               {
                 href: "/services",
-                title: "Full-Service Marina",
-                desc: "Boat slips, fuel dock, bait & tackle, and everything you need for a great day on the water.",
+                title: "Waterfront Restaurant",
+                desc: "Fresh seafood, bacon cheeseburgers, western omelets, and more. Open 6 days a week, breakfast through lunch.",
                 icon: (
                   <svg className="w-10 h-10 text-crimson" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 17h1l2-5h12l2 5h1M5 17a2 2 0 104 0M15 17a2 2 0 104 0" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ),
               },
@@ -87,14 +88,16 @@ export default function Home() {
               A Tradition on the Suwannee
             </h2>
             <p className="text-dark/60 leading-relaxed mb-4">
-              Suwannee Marina has been a cornerstone of the Nature Coast boating
-              community for decades. Whether you&apos;re heading offshore to the
-              Gulf, casting a line in the river, or just soaking in a legendary
-              sunset, this is where it all begins.
+              Suwannee Marina &amp; Restaurant has been a cornerstone of the
+              Nature Coast community for decades. Pull up by boat or by car for
+              a fresh-cooked breakfast, stock up on live shrimp and tackle, fuel
+              up, and head out to the Gulf — or just sit on the waterfront and
+              watch the river roll by.
             </p>
             <p className="text-dark/60 leading-relaxed mb-8">
-              We&apos;re more than a marina — we&apos;re a gathering place for
-              friends, families, and fellow adventurers.
+              We&apos;re more than a marina and more than a restaurant — we&apos;re
+              a gathering place for friends, families, and fellow adventurers
+              on the Suwannee.
             </p>
             <Link
               href="/about"
@@ -114,10 +117,11 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Plan Your Visit Today
+              Come Hungry, Leave Happy
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Check the tides, explore our services, and get directions to the marina.
+              Check the tides, browse our menu and services, and find your way
+              to the best waterfront dining on the Nature Coast.
             </p>
             <Link
               href="/contact"

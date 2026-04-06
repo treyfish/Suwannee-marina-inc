@@ -10,11 +10,12 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <CompassLogo size={36} />
-              <span className="text-white font-bold text-lg">Suwannee Marina</span>
+              <span className="text-white font-bold text-lg">Suwannee Marina &amp; Restaurant</span>
             </div>
             <p className="text-sm leading-relaxed">
-              Your gateway to the Gulf on Florida&apos;s beautiful Nature Coast.
-              Located at the mouth of the historic Suwannee River.
+              Waterfront dining and your gateway to the Gulf on Florida&apos;s
+              beautiful Nature Coast. Fresh seafood, Southern favorites, and a
+              full-service marina at the mouth of the Suwannee River.
             </p>
           </div>
 
@@ -24,7 +25,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               {[
                 { href: "/about", label: "About Us" },
-                { href: "/services", label: "Services" },
+                { href: "/services", label: "Menu & Services" },
                 { href: "/tides", label: "Tide Charts" },
                 { href: "/gallery", label: "Gallery" },
                 { href: "/contact", label: "Contact" },
@@ -44,10 +45,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Contact Us</h3>
             <div className="flex flex-col gap-2 text-sm">
-              <p>P.O. Box 397</p>
+              <p>94 SE 903rd Ave</p>
               <p>Suwannee, FL 32692</p>
               <p>Phone: (352) 542-9159</p>
-              <p>Open 7 Days a Week</p>
+              <p>Open 6 Days a Week | Closes at 2:00 PM</p>
             </div>
             {/* Social links */}
             <div className="flex gap-4 mt-4">
@@ -65,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Suwannee Marina. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Suwannee Marina &amp; Restaurant. All rights reserved.</p>
         </div>
       </div>
     </footer>

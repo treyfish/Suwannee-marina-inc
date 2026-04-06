@@ -1,8 +1,8 @@
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata = {
-  title: "About | Suwannee Marina",
-  description: "Learn about Suwannee Marina on Florida's Nature Coast — our history, mission, and the community we serve.",
+  title: "About | Suwannee Marina & Restaurant",
+  description: "Learn about Suwannee Marina & Restaurant on Florida's Nature Coast — waterfront dining, full-service marina, and the community we serve.",
 };
 
 export default function AboutPage() {
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <section className="pt-28 pb-16 px-4 bg-gradient-to-b from-navy to-navy-light">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">About Us</h1>
-          <p className="text-white/70 text-lg">A proud part of Florida&apos;s Nature Coast</p>
+          <p className="text-white/70 text-lg">Waterfront dining and a working marina on Florida&apos;s Nature Coast</p>
         </div>
       </section>
 
@@ -22,25 +22,25 @@ export default function AboutPage() {
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-navy mb-6">Our Story</h2>
             <p className="text-dark/60 leading-relaxed mb-4">
-              Suwannee Marina sits at the heart of one of Florida&apos;s last
-              unspoiled coastal communities. Located where the legendary
-              Suwannee River meets the Gulf of Mexico, our marina has been a
-              trusted home port for recreational boaters, commercial fishermen,
-              and nature enthusiasts alike.
+              Suwannee Marina &amp; Restaurant sits where the legendary Suwannee
+              River meets the Gulf of Mexico — right at the heart of one of
+              Florida&apos;s last unspoiled coastal communities. We&apos;re a
+              casual waterfront restaurant serving fresh seafood and Southern
+              comfort food every morning and afternoon, and a full-service
+              marina outfitting boaters and anglers for the waters ahead.
             </p>
             <p className="text-dark/60 leading-relaxed mb-4">
-              The Suwannee River — made famous by Stephen Foster&apos;s iconic
-              song — winds through some of the most pristine natural landscapes
-              in the southeastern United States before reaching our doorstep.
-              This unique location gives our visitors access to world-class
-              inshore and offshore fishing, stunning wildlife viewing, and
-              unforgettable sunsets over the Gulf.
+              Pull up a chair for a western omelet or a bacon cheeseburger,
+              grab a fresh fish sandwich before heading out, or sit on the
+              waterfront and watch the river roll by. We open early and close
+              at 2:00 PM — because around here, the best part of the day
+              starts at sunrise.
             </p>
             <p className="text-dark/60 leading-relaxed">
-              We take pride in being more than just a place to dock your boat.
-              Suwannee Marina is a gathering place where lifelong friendships
-              are forged, fishing stories are shared, and the pace of life
-              slows down to match the gentle current of the river.
+              On the marina side, we keep you stocked with live shrimp, frozen
+              bait, fuel, and covered boat storage for vessels up to 24 feet.
+              Whether you&apos;re running offshore to the Gulf or working the
+              flats for redfish, this is where your trip begins and ends.
             </p>
           </ScrollReveal>
 
@@ -70,22 +70,34 @@ export default function AboutPage() {
               {
                 title: "World-Class Fishing",
                 desc: "From redfish and trout in the flats to grouper and snapper offshore, the waters around the Suwannee River are a fisherman's paradise.",
-                icon: "🎣",
+                icon: (
+                  <svg className="w-10 h-10 text-water" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3M3 19c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3c2.483 0 4.345-3 4.345-3s1.862 3 4.345 3" />
+                  </svg>
+                ),
               },
               {
                 title: "Pristine Nature",
                 desc: "Manatees, dolphins, bald eagles, and more call this area home. Explore miles of unspoiled coastline and spring-fed rivers.",
-                icon: "🌿",
+                icon: (
+                  <svg className="w-10 h-10 text-water" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                ),
               },
               {
                 title: "Community Spirit",
-                desc: "Regular cookouts, fishing tournaments, holiday celebrations, and more. Everyone is welcome at Suwannee Marina.",
-                icon: "🤝",
+                desc: "Cookouts, fishing tournaments, holiday celebrations, and good neighbors. Everyone is welcome at Suwannee Marina.",
+                icon: (
+                  <svg className="w-10 h-10 text-water" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                ),
               },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={`animate-delay-${(i + 1) * 100}`}>
                 <div className="text-center p-8">
-                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <div className="flex justify-center mb-4">{item.icon}</div>
                   <h3 className="text-xl font-bold text-navy mb-3">{item.title}</h3>
                   <p className="text-dark/60 leading-relaxed">{item.desc}</p>
                 </div>
@@ -101,14 +113,14 @@ export default function AboutPage() {
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-navy mb-6">Our Community</h2>
             <p className="text-dark/60 leading-relaxed mb-4 text-lg">
-              At Suwannee Marina, we believe in bringing people together. From
-              our famous cookouts and fish fries to holiday celebrations and
-              community fundraisers, there&apos;s always something happening at
-              the marina.
+              At Suwannee Marina &amp; Restaurant, we believe in bringing people
+              together. Whether it&apos;s over a plate of fresh-caught fish, a
+              morning cup of coffee on the dock, or a holiday cookout with the
+              whole community — this place runs on good food and good company.
             </p>
             <p className="text-dark/60 leading-relaxed text-lg">
-              Whether you&apos;re a seasoned captain or a first-time visitor,
-              you&apos;ll feel like family from the moment you arrive. That&apos;s
+              Whether you&apos;re a seasoned captain or just passing through,
+              you&apos;ll feel like family from the moment you walk in. That&apos;s
               the Suwannee way.
             </p>
           </ScrollReveal>
