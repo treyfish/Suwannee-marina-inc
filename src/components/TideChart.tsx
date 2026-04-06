@@ -74,7 +74,7 @@ export default function TideChart() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="w-10 h-10 border-4 border-navy/20 border-t-navy rounded-full animate-spin" />
+        <div className="w-10 h-10 border-4 border-teal/20 border-t-teal rounded-full animate-spin" />
       </div>
     );
   }
@@ -132,7 +132,7 @@ export default function TideChart() {
     <div className="space-y-10">
       {/* Today's tide curve */}
       <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
-        <h3 className="text-xl font-bold text-navy mb-2">Today&apos;s Tide Curve</h3>
+        <h3 className="text-xl font-bold text-dark mb-2">Today&apos;s Tide Curve</h3>
         <p className="text-dark/40 text-sm mb-6">NOAA Station {STATION_ID} — Suwannee River Entrance, FL</p>
 
         <div className="overflow-x-auto">
@@ -165,18 +165,18 @@ export default function TideChart() {
                   y1={currentDot.y}
                   x2={currentDot.x}
                   y2={svgHeight - padding}
-                  stroke="var(--color-crimson)"
+                  stroke="var(--color-sunset)"
                   strokeWidth="1"
                   strokeDasharray="3"
                   opacity="0.4"
                 />
                 {/* Pulsing outer ring */}
-                <circle cx={currentDot.x} cy={currentDot.y} r="8" fill="var(--color-crimson)" opacity="0.2">
+                <circle cx={currentDot.x} cy={currentDot.y} r="8" fill="var(--color-sunset)" opacity="0.2">
                   <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2s" repeatCount="indefinite" />
                 </circle>
                 {/* Solid dot */}
-                <circle cx={currentDot.x} cy={currentDot.y} r="5" fill="var(--color-crimson)" stroke="white" strokeWidth="2" />
+                <circle cx={currentDot.x} cy={currentDot.y} r="5" fill="var(--color-sunset)" stroke="white" strokeWidth="2" />
                 {/* Height label */}
                 <text
                   x={currentDot.x}
@@ -184,7 +184,7 @@ export default function TideChart() {
                   textAnchor={currentDot.x > svgWidth - padding - 40 ? "end" : currentDot.x < padding + 40 ? "start" : "middle"}
                   fontSize="11"
                   fontWeight="bold"
-                  fill="var(--color-crimson)"
+                  fill="var(--color-sunset)"
                 >
                   {currentDot.height} ft
                 </text>
@@ -195,7 +195,7 @@ export default function TideChart() {
                   textAnchor="middle"
                   fontSize="10"
                   fontWeight="bold"
-                  fill="var(--color-crimson)"
+                  fill="var(--color-sunset)"
                 >
                   Now
                 </text>
@@ -218,23 +218,23 @@ export default function TideChart() {
 
       {/* 7-day forecast table */}
       <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
-        <h3 className="text-xl font-bold text-navy mb-6">7-Day Tide Forecast</h3>
+        <h3 className="text-xl font-bold text-dark mb-6">7-Day Tide Forecast</h3>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-sandy-dark">
-                <th className="text-left py-3 px-4 font-semibold text-navy">Date</th>
-                <th className="text-left py-3 px-4 font-semibold text-navy">Time</th>
-                <th className="text-left py-3 px-4 font-semibold text-navy">Height (ft)</th>
-                <th className="text-left py-3 px-4 font-semibold text-navy">Type</th>
+              <tr className="border-b border-cream-dark">
+                <th className="text-left py-3 px-4 font-semibold text-dark">Date</th>
+                <th className="text-left py-3 px-4 font-semibold text-dark">Time</th>
+                <th className="text-left py-3 px-4 font-semibold text-dark">Height (ft)</th>
+                <th className="text-left py-3 px-4 font-semibold text-dark">Type</th>
               </tr>
             </thead>
             <tbody>
               {hiLoData.map((p, i) => (
                 <tr
                   key={i}
-                  className="border-b border-sandy/50 hover:bg-sandy/50 transition-colors"
+                  className="border-b border-cream/50 hover:bg-cream/50 transition-colors"
                 >
                   <td className="py-3 px-4 text-dark/70">{formatDay(p.t)}</td>
                   <td className="py-3 px-4 text-dark/70">{formatTime(p.t)}</td>
@@ -245,8 +245,8 @@ export default function TideChart() {
                     <span
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                         p.type === "H"
-                          ? "bg-water/10 text-water"
-                          : "bg-crimson/10 text-crimson"
+                          ? "bg-teal/10 text-teal"
+                          : "bg-sunset/10 text-sunset"
                       }`}
                     >
                       {p.type === "H" ? "High" : "Low"}

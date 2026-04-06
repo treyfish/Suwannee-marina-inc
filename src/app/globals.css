@@ -1,77 +1,31 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy: #2C3E50;
-  --color-navy-light: #3D566E;
-  --color-crimson: #B7472A;
-  --color-crimson-dark: #8B3520;
-  --color-sandy: #F2EAD3;
-  --color-sandy-dark: #E0D5B8;
-  --color-water: #3B7A8B;
-  --color-water-light: #5A9BAD;
+  --color-marsh: #638B51;
+  --color-marsh-dark: #4E6F3F;
+  --color-teal: #4A8B9B;
+  --color-teal-dark: #3A7080;
+  --color-sunset: #D4844A;
+  --color-sunset-dark: #B86E38;
+  --color-cream: #F5F1E8;
+  --color-cream-dark: #E8E2D4;
+  --color-driftwood: #8C7D6E;
+  --color-driftwood-light: #A89882;
   --color-dark: #2D2A26;
   --color-white: #FFFFFF;
-  --color-sunset: #D4853B;
-  --color-driftwood: #8B7D6B;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Georgia", "Palatino Linotype", "Book Antiqua", Palatino, serif;
   --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
 }
 
 body {
-  background: var(--color-sandy);
+  background: var(--color-cream);
   color: var(--color-dark);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Scroll reveal animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out forwards;
-}
-
-.animate-delay-100 { animation-delay: 0.1s; }
-.animate-delay-200 { animation-delay: 0.2s; }
-.animate-delay-300 { animation-delay: 0.3s; }
-.animate-delay-400 { animation-delay: 0.4s; }
-.animate-delay-500 { animation-delay: 0.5s; }
-
-/* Initially hidden for scroll reveal */
-.reveal-hidden {
-  opacity: 0;
+h1, h2, h3 {
+  font-family: var(--font-serif);
 }
 
 /* Smooth scrolling */
@@ -81,12 +35,12 @@ html {
 
 /* Tide chart SVG styling */
 .tide-line {
-  stroke: var(--color-water);
+  stroke: var(--color-teal);
   stroke-width: 2.5;
   fill: none;
 }
 
 .tide-area {
-  fill: var(--color-water);
+  fill: var(--color-teal);
   opacity: 0.1;
 }

@@ -34,7 +34,7 @@ export default function CompassLogo({ size = 48, className = "" }: { size?: numb
       aria-label="Suwannee Marina and Restaurant"
     >
       {/* Red background circle */}
-      <circle cx={cx} cy={cy} r={r} fill="#B7472A" />
+      <circle cx={cx} cy={cy} r={r} fill="#C4513A" />
 
       {/* Outer ring */}
       <circle cx={cx} cy={cy} r="44" fill="none" stroke="white" strokeWidth="1.5" opacity="0.6" />
@@ -76,7 +76,7 @@ export default function CompassLogo({ size = 48, className = "" }: { size?: numb
 
       {/* Center circle */}
       <circle cx={cx} cy={cy} r="4" fill="white" />
-      <circle cx={cx} cy={cy} r="2" fill="#B7472A" />
+      <circle cx={cx} cy={cy} r="2" fill="#C4513A" />
 
       {/* Cardinal direction labels */}
       <text x="50" y="22" textAnchor="middle" fontSize="6" fontWeight="bold" fill="white" fontFamily="serif">N</text>

@@ -7,7 +7,7 @@ import CompassLogo from "./CompassLogo";
 const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Menu & Services" },
   { href: "/tides", label: "Tides" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
@@ -27,21 +27,19 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-navy/95 shadow-lg backdrop-blur-sm"
+          ? "bg-dark/95 shadow-lg backdrop-blur-sm"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <CompassLogo size={40} className="transition-transform duration-300 group-hover:rotate-45" />
-            <span className="text-white font-bold text-lg sm:text-xl tracking-wide">
+            <CompassLogo size={40} className="transition-transform duration-300 group-hover:rotate-12" />
+            <span className="text-white font-bold text-lg sm:text-xl tracking-wide" style={{ fontFamily: "var(--font-serif)" }}>
               Suwannee Marina
             </span>
           </Link>
 
-          {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-1">
             {links.map((link) => (
               <Link
@@ -54,7 +52,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white p-2"
@@ -70,9 +67,8 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden bg-navy/95 backdrop-blur-sm rounded-b-xl pb-4">
+          <div className="md:hidden bg-dark/95 backdrop-blur-sm rounded-b-xl pb-4">
             {links.map((link) => (
               <Link
                 key={link.href}

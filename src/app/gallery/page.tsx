@@ -6,11 +6,11 @@ export const metadata = {
 };
 
 const categories = [
-  { name: "The Restaurant", gradient: "from-sunset to-crimson", count: 4 },
-  { name: "Fishing", gradient: "from-water to-navy", count: 6 },
-  { name: "Sunsets", gradient: "from-orange-400 to-crimson", count: 6 },
-  { name: "Events", gradient: "from-crimson to-navy", count: 6 },
-  { name: "Marina Life", gradient: "from-navy-light to-water", count: 6 },
+  { name: "The Restaurant", gradient: "from-sunset to-sunset-dark", count: 4 },
+  { name: "Fishing", gradient: "from-teal to-teal-dark", count: 6 },
+  { name: "Sunsets", gradient: "from-sunset to-driftwood", count: 6 },
+  { name: "Events", gradient: "from-marsh to-marsh-dark", count: 6 },
+  { name: "Marina Life", gradient: "from-teal-dark to-dark", count: 6 },
 ];
 
 const placeholderIcons: Record<string, React.ReactNode> = {
@@ -44,23 +44,21 @@ const placeholderIcons: Record<string, React.ReactNode> = {
 export default function GalleryPage() {
   return (
     <>
-      {/* Hero banner */}
-      <section className="pt-28 pb-16 px-4 bg-gradient-to-b from-navy to-navy-light">
+      <section className="pt-28 pb-16 px-4 bg-dark">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Gallery</h1>
-          <p className="text-white/70 text-lg">
+          <p className="text-white/60 text-lg">
             Life on the Suwannee — fishing, sunsets, and good times
           </p>
         </div>
       </section>
 
-      {/* Gallery sections */}
-      <section className="py-20 px-4 bg-sandy">
+      <section className="py-20 px-4 bg-cream">
         <div className="max-w-6xl mx-auto space-y-16">
           {categories.map((cat) => (
             <div key={cat.name}>
               <ScrollReveal>
-                <h2 className="text-2xl font-bold text-navy mb-6 flex items-center gap-3">
+                <h2 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
                   <span className={`w-1 h-8 rounded-full bg-gradient-to-b ${cat.gradient}`} />
                   {cat.name}
                 </h2>
@@ -68,16 +66,14 @@ export default function GalleryPage() {
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {Array.from({ length: cat.count }).map((_, i) => (
-                  <ScrollReveal key={i} delay={`animate-delay-${((i % 3) + 1) * 100}`}>
+                  <ScrollReveal key={i} delay={((i % 3) + 1) * 100}>
                     <div
                       className={`bg-gradient-to-br ${cat.gradient} rounded-xl aspect-square flex items-center justify-center group cursor-pointer overflow-hidden relative`}
                     >
-                      {/* Placeholder icon */}
                       <div className="transition-transform duration-300 group-hover:scale-110">
                         {placeholderIcons[cat.name]}
                       </div>
 
-                      {/* Hover overlay */}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-end">
                         <div className="p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                           <p className="text-white text-sm font-medium">
@@ -94,16 +90,15 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Note */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <p className="text-dark/40 text-sm">
+            <p className="text-driftwood-light text-sm">
               Demo gallery — placeholder images shown. Follow Suwannee Marina &amp; Restaurant on{" "}
-              <a href="#" className="text-water hover:text-navy transition-colors font-medium">
+              <a href="#" className="text-teal hover:text-marsh transition-colors font-medium">
                 Facebook
               </a>{" "}
-              for the latest photos and updates from Suwannee Marina.
+              for the latest photos and updates.
             </p>
           </ScrollReveal>
         </div>
