@@ -46,7 +46,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-dark">Address</h3>
                     <p className="text-driftwood text-sm">
-                      94 SE 903rd Ave<br />
+                      49 SE 903rd Ave<br />
                       Suwannee, FL 32692
                     </p>
                   </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
               <div className="rounded-xl overflow-hidden shadow-sm h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.123!2d-83.165!3d29.327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDE5JzM3LjIiTiA4M8KwMDknNTQuMCJX!5e0!3m2!1sen!2sus!4v1"
+                  src="https://www.google.com/maps?q=49+SE+903rd+Ave,+Suwannee,+FL+32692&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

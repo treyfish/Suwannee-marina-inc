@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Visit Us</h3>
             <div className="flex flex-col gap-2 text-sm">
-              <p>94 SE 903rd Ave</p>
+              <p>49 SE 903rd Ave</p>
               <p>Suwannee, FL 32692</p>
               <p className="mt-2">
                 <a href="tel:3525429159" className="hover:text-white transition-colors">(352) 542-9159</a>
