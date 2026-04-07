@@ -21,7 +21,7 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-serif)" }}>
-          Suwannee Marina<br className="sm:hidden" /> &amp; Restaurant
+          Suwannee Marina{" "}<br className="sm:hidden" />&amp; Restaurant
         </h1>
 
         <p className="text-lg sm:text-xl text-cream/80 mb-3 tracking-wide uppercase" style={{ letterSpacing: "0.15em", fontFamily: "var(--font-serif)" }}>
